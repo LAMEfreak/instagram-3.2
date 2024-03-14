@@ -1,8 +1,11 @@
-// Import the functions you need from the SDKs you need
+// Import the functions from the SDKs
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
-// TODO: Replace with your app's Firebase project configuration
+// Import getStorage for Firebase Storage
+import { getStorage } from "firebase/storage";
+
+// Firebase project configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_SOME_API_KEY,
   authDomain: import.meta.env.VITE_SOME_AUTH_DOMAIN,
@@ -13,8 +16,11 @@ const firebaseConfig = {
   databaseURL: import.meta.env.VITE_SOME_DATABASE_URL,
 };
 
-// Initialize Firebase
+// Initialize Firebase with the project configuration
 const firebaseApp = initializeApp(firebaseConfig);
 
-// Get a reference to the database service and export the reference for other modules
+// Get a reference to the database service and export for other modules
 export const database = getDatabase(firebaseApp);
+
+// Get a reference to the Storage service and export for other modules
+export const storage = getStorage(firebaseApp);
